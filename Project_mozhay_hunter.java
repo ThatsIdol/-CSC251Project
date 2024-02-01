@@ -14,10 +14,13 @@ public class Project_mozhay_hunter
       String pLastName;
       String pProvider;
       String pSmoker;
+      int smokerCount = 0;
+      int nonSmokerCount = 0;
       int pAge;
       int pNum; //policy number
       double pHeight;
       double pWeight;
+      
       
       
       //create array list
@@ -64,9 +67,16 @@ public class Project_mozhay_hunter
       System.out.println("Policyholder’s Weight: " + policies.get(i).getWeight() + " pounds");
       System.out.printf("Policyholder’s BMI: %,.2f\n", policies.get(i).calculateBMI());
       System.out.printf("Policyholder’s Price: $%,.2f\n\n", policies.get(i).calculatePrice());
-
+      
+      //count smokers and non-smokers
+      if (policies.get(i).getSmoker().equals("smoker"))
+         smokerCount++;
+      else
+         nonSmokerCount++;
       }
-
+      
+      System.out.println("The number of policies with a smoker is: " + smokerCount);
+      System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
       
    }
 }
