@@ -190,4 +190,21 @@ public class PolicyHolder
 
       return price;
     }
+    
+   /**
+      toString method
+      @return - A string containing the policyholder information
+  */ 
+   public String toString()
+   {
+      return String.format("Policyholder's First Name: " + firstName + 
+             "\nPolicyholder's Last Nane: " + lastName + 
+             "\nPolicyholder's Age: " + age +
+             "\nPolicyholder's Smoking Status: " + smoker +
+             "\nPolicyholder's Height: " + height +
+             "\nPolicyholder's Weight: " + weight +
+             "\nPolicyholder's BMI: %,.2f" + calculateBMI() +
+             "\nPolicy Price: $%,.2f" + calculatePrice());
+   }
+}
 }
