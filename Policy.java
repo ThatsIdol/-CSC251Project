@@ -60,6 +60,15 @@ public class Policy
       return provider;
     }
     
+   /**
+      toString method
+      @return - A string containing the policy information
+  */ 
+   public String toString()
+   {
+      return String.format("Policy Number:  " + policyNum + 
+             "\nProvider Name: " + provider );
+   }
 
 }
 
