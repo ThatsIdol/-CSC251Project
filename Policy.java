@@ -3,14 +3,16 @@ public class Policy
 {
    private int policyNum;
    private String provider;
+   private PolicyHolder policyHolder;
    private static int count = 0;
+   
 
-
-   public Policy(int pNum, String pProvider)
+   public Policy(int pNum, String pProvider, PolicyHolder holder)
    {
       count++;
       policyNum = pNum;
       provider = pProvider;
+      policyHolder = new PolicyHolder(holder);
     }
     
    public Policy()
@@ -18,7 +20,7 @@ public class Policy
       count++;
       policyNum = 0;
       provider = "Provider";
-
+      policyHolder = new PolicyHolder();
     }
     
     /**
@@ -43,6 +45,16 @@ public class Policy
     }
     
     /**
+      The setPolicyHolder method sets the policy holder
+      @param pNum The object to store into the policyHolder field
+    */
+    
+    public void setPolicyHolder(PolicyHolder holder)
+    {
+      policyHolder = holder;
+    }
+    
+    /**
       The getPolicyNum method returns the policy number value
       @return policyNum The value in the policy number field
     */
@@ -62,6 +74,26 @@ public class Policy
       return provider;
     }
     
+    /**
+      The getPolicyHolder method returns the policy holder object
+      @return policyHolder The policy holder object
+    */
+    
+    public PolicyHolder getPolicyHolder()
+    {
+      return policyHolder;
+    }
+    
+    /**
+      The getPolicyCount method returns the amount of policies created
+      @return count The amount of policies
+    */
+    
+    public int getPolicyCount()
+    {
+      return count;
+    }
+    
    /**
       toString method
       @return - A string containing the policy information
@@ -69,7 +101,8 @@ public class Policy
    public String toString()
    {
       return String.format("Policy Number:  " + policyNum + 
-             "\nProvider Name: " + provider );
+             "\nProvider Name: " + provider +
+             "\n" + policyHolder.toString() + "\n");
    }
 
 }

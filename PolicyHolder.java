@@ -29,6 +29,20 @@ public class PolicyHolder
       smoker = "non-smoker";
     }
     
+   /*
+     Copy constructor
+     @param object2 - the object to copy
+   */
+   public PolicyHolder(PolicyHolder object2)
+   {
+      age = object2.age;
+      weight = object2.weight;
+      height = object2.height;
+      firstName = object2.firstName;
+      lastName = object2.lastName;
+      smoker = object2.smoker;
+   }
+    
     /**
       The setAge method stores a value into the age field
       @param pNum The value to store in the age field
@@ -203,8 +217,7 @@ public class PolicyHolder
              "\nPolicyholder's Smoking Status: " + smoker +
              "\nPolicyholder's Height: " + height +
              "\nPolicyholder's Weight: " + weight +
-             "\nPolicyholder's BMI: %,.2f" + calculateBMI() +
-             "\nPolicy Price: $%,.2f" + calculatePrice());
+             "\nPolicyholder's BMI: %.2f" +
+             "\nPolicy Price: $%.2f", calculateBMI(), calculatePrice());
    }
-}
 }
