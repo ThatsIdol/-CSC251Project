@@ -3,17 +3,19 @@ public class Policy
 {
    private int policyNum;
    private String provider;
-
+   private static int count = 0;
 
 
    public Policy(int pNum, String pProvider)
    {
+      count++;
       policyNum = pNum;
       provider = pProvider;
     }
     
    public Policy()
    {
+      count++;
       policyNum = 0;
       provider = "Provider";
 
